@@ -1,0 +1,12 @@
+.Timer {
+    margin: 0px;
+    padding: 0px;
+}
+
+h3 {
+    margin: 0.5em;
+}
+
+.finish h3 {
+    color: lightgreen;
+}

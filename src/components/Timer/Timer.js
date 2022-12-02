@@ -1,4 +1,5 @@
 import React from "react"
+import "./Timer.css"
 
 class Timer extends React.Component {
     displayTime() {
@@ -11,7 +12,11 @@ class Timer extends React.Component {
     render() {
        
         return (
-            <div>
+            <div className="Timer">
+                {this.props.hasCompleted && 
+                <div className="finish">
+                    <h3>Congratulations! You've made it!</h3>
+                </div>}
                 <h3>{this.displayTime()}</h3>
             </div>
         );

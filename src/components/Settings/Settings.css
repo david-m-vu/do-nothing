@@ -1,0 +1,33 @@
+.Settings {
+    background-image: linear-gradient(to top, rgba(255,0,0,0), rgb(74, 98, 129));
+    
+}
+
+.closed, 
+.open {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: black;
+    padding: 10px;
+    height: 40px;
+}
+
+.label-container {
+    display: inline-flex;
+    align-items: center;
+}
+
+.icon {
+    display: inline-flex;
+    align-items: center;
+}
+
+.label-container:hover{
+    cursor: pointer;
+}
+
+img {
+    padding: 10px;
+    height: 40px;
+}

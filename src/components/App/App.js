@@ -1,24 +1,36 @@
 import './App.css';
 import React from 'react';
 import Timer from '../Timer/Timer';
+import Settings from "../Settings/Settings";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      start: 3000 * 60,
-      time: 5000,
+      start: 2000 * 60,
+      time: 2000 * 60,
       hasCompleted: false,
+      onApp: true
     }
     this.resetTimer = this.resetTimer.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
-    this.stopTimer = this.stopTimer.bind(this);
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
 
     this.timer = 0;
   }
 
   handleMouseLeave() {
-    this.stopTimer()
+    this.setState({
+      onApp: false
+    });
+    console.log("MOUSE LEAVE");
+  }
+
+  handleMouseEnter() {
+    this.setState({
+      onApp: true
+    })
+    console.log("MOUSE ENTER");
   }
 
   resetTimer() {
@@ -30,15 +42,6 @@ class App extends React.Component {
     }
   }
 
-  stopTimer() {
-    if (this.timer) {
-      console.log("stop" + this.timer);
-      clearInterval(this.timer);
-    }
-  }
-
-
-
   componentDidMount() {
     console.log("start");
     this.timer = setInterval(() => {
@@ -46,8 +49,8 @@ class App extends React.Component {
         this.setState({
           hasCompleted: true
         })
-        clearInterval(this.timer);
-      } else {
+        this.displayFinish();
+      } else if (this.state.onApp) {
         this.setState(
           { time: this.state.time - 1000 }
         );
@@ -58,8 +61,13 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App" onMouseMove={this.resetTimer} onMouseLeave={this.handleMouseLeave}>
-        <Timer time={this.state.time} />
+      <div className="App" onMouseMove={this.resetTimer} onMouseLeave={this.handleMouseLeave} onMouseEnter={this.handleMouseEnter}>
+        <div className="Settings">
+          <Settings/>
+        </div>
+        <div className="Timer">
+          <Timer time={this.state.time} hasCompleted={this.state.hasCompleted}/>
+        </div>
       </div>
     )
   }

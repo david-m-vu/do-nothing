@@ -1,13 +1,21 @@
 .App {
-  text-align: center;
-  background-color: black;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
+  margin: 0px;
+  background-color: black;
   background-image: url("../../../public/images/winter.png");
   background-repeat: repeat-x;
   background-size: contain;
-  font-size: 30px;
+  color: white;
+  font-size: 20px;
+}
+
+.Timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.Settings {
+  margin: 0px;
 }
