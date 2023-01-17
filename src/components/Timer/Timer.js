@@ -31,7 +31,7 @@ class Timer extends React.Component {
                     </div>}
                     {(this.props.start === this.props.time && this.props.hasInitiated && !this.props.hasCompleted) && 
                     <div className="fail">
-                        <h3>Live in the moment</h3>
+                        <h3>~Live in the moment~</h3>
                     </div>}
                 </div>
                 <h3 className={this.getTimerClass()}>{this.displayTime()}</h3>
