@@ -1,12 +1,13 @@
 .App {
   height: 100vh;
+  width: 100%;
   margin: 0px;
   background-color: black;
   background-image: url("../../../public/images/winter.png");
-  background-repeat: repeat-x;
-  background-size: contain;
+  background-size: cover;
   color: white;
   font-size: 20px;
+  background-position:  50%;
 }
 
 .Timer {
@@ -14,6 +15,7 @@
   justify-content: center;
   align-items: center;
   height: 80vh;
+  width: 100%;
 }
 
 .Settings {

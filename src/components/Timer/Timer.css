@@ -1,12 +1,56 @@
 .Timer {
     margin: 0px;
     padding: 0px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
-h3 {
-    margin: 0.5em;
+.popup-text {
+    position: absolute;
+    top: 40%;
+    transform: translate(0, -40%);
+    text-align:center;
+}
+
+.success-timer, .fail-timer, .running-timer {
+    transition: color 0.5s;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.success-timer {
+    color: rgb(37, 206, 164);
+}
+
+.fail-timer {
+    color: rgb(245, 69, 69);
+}
+
+.running-timer {
+    color: white;
 }
 
 .finish h3 {
-    color: lightgreen;
+    color: rgb(37, 206, 164);
+    font-size: 2em;
+}
+
+.fail h3 {
+    color: rgb(223, 97, 97);
+    font-size: 1.5em;
+}
+
+button {
+    border: 1px solid green;
+    height: 2em;
+    width: 20%;
+    background-color:rgb(238, 255, 251);
+    font-weight: bold;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+button:hover {
+    cursor: pointer;
 }

@@ -9,15 +9,32 @@ class Timer extends React.Component {
         return `${minutes} : ${seconds}`;
     }
 
+    getTimerClass() {
+        if (this.props.start === this.props.time && this.props.hasInitiated) {
+            return "fail-timer";
+        } else if (this.props.time === 0) {
+            return "success-timer";
+        } else {
+            return "running-timer";
+        }
+    }
+
     render() {
        
         return (
             <div className="Timer">
-                {this.props.hasCompleted && 
-                <div className="finish">
-                    <h3>Congratulations! You've made it!</h3>
-                </div>}
-                <h3>{this.displayTime()}</h3>
+                <div className="popup-text">
+                    {this.props.hasCompleted && 
+                    <div className="finish">
+                        <h3>Congratulations! You made it!</h3>
+                        <button onClick={this.props.onStartOver}>Start Over</button>
+                    </div>}
+                    {(this.props.start === this.props.time && this.props.hasInitiated && !this.props.hasCompleted) && 
+                    <div className="fail">
+                        <h3>Live in the moment</h3>
+                    </div>}
+                </div>
+                <h3 className={this.getTimerClass()}>{this.displayTime()}</h3>
             </div>
         );
     }

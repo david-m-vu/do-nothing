@@ -10,33 +10,50 @@ class Settings extends React.Component {
             toggledOn: false
         }
 
-        this.displaySettings = this.displaySettings.bind(this);
         this.toggleSettings = this.toggleSettings.bind(this);
+        this.handleTimeChange = this.handleTimeChange.bind(this);
+        this.handleBackgroundToggle = this.handleBackgroundToggle.bind(this);
+    }
+
+    handleTimeChange(event) {
+        this.props.onTimeChange(event.target.value);
+    }
+
+    handleBackgroundToggle(event) {
+        this.props.onBackgroundToggle();
     }
 
     toggleSettings() {
         this.setState({
             toggledOn: !(this.state.toggledOn)
         });
-        console.log(this.state.toggledOn);
     }
 
     displaySettings() {
         if (this.state.toggledOn) {
             return (
-                <div className="open">
-                    <div className="dropdown">
-                        <img src={settingsIcon} alt="Settings Gear"></img>
+                <div className="dropdown">
+                    <div className="icon">
+                        <img src={settingsIcon} alt="Settings Gear" onClick={this.toggleSettings}/>
+                    </div>
+                    <div className="adjustments">
+                        <div className="timer-length">
+                            <p>Timer length:</p>
+                            <input defaultValue={this.props.start} onChange={this.handleTimeChange}/>
+                            <p>ms</p>
+                        </div>
+                        <div className="background-toggle">
+                            <p>Switch background</p>
+                            <input type="checkbox" onChange={this.handleBackgroundToggle}/>
+                        </div>
                     </div>
                 </div>
             )
         } else {
             return (
-                <div className="closed">
-                    <div className="label-container" onClick={this.toggleSettings}>
-                        <p>Settings</p>
-                        <img src={settingsIcon} alt="Settings Gear"></img>
-                    </div>
+                <div className="label-container" onClick={this.toggleSettings}>
+                    <p>Settings</p>
+                    <img src={settingsIcon} alt="Settings Gear"/>
                 </div>
             )
         }
@@ -44,8 +61,10 @@ class Settings extends React.Component {
 
     render() {
         return (
-            <div className="Settings">                
-                {this.displaySettings()}
+            <div className="Settings">
+                <div className="bar-container">
+                    {this.displaySettings()}
+                </div>
             </div>
         )
     }
