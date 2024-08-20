@@ -1,6 +1,6 @@
 import React from "react";
 import "./Settings.css";
-import settingsIcon from "./gear.png";
+import SettingsIcon from '@mui/icons-material/Settings';
 
 class Settings extends React.Component {
     constructor(props) {
@@ -16,7 +16,7 @@ class Settings extends React.Component {
     }
 
     handleTimeChange(event) {
-        this.props.onTimeChange(event.target.value);
+        this.props.onTimeChange(event.target.value * 1000);
     }
 
     handleBackgroundToggle(event) {
@@ -33,14 +33,14 @@ class Settings extends React.Component {
         if (this.state.toggledOn) {
             return (
                 <div className="dropdown">
-                    <div className="icon">
-                        <img src={settingsIcon} alt="Settings Gear" onClick={this.toggleSettings}/>
+                    <div className="icon" onClick={this.toggleSettings}>
+                        <SettingsIcon  sx={{ fontSize: 40 }}></SettingsIcon>
                     </div>
                     <div className="adjustments">
                         <div className="timer-length">
                             <p>Timer length:</p>
-                            <input defaultValue={this.props.start} onChange={this.handleTimeChange}/>
-                            <p>ms</p>
+                            <input defaultValue={(this.props.start / 1000)} onChange={this.handleTimeChange}/>
+                            <p>seconds</p>
                         </div>
                         <div className="background-toggle">
                             <p>Switch background</p>
@@ -53,8 +53,10 @@ class Settings extends React.Component {
             return (
                 <div className="label-container" onClick={this.toggleSettings}>
                     <p>Settings</p>
-                    <img src={settingsIcon} alt="Settings Gear"/>
-                </div>
+                    <div className="icon">
+                        <SettingsIcon sx={{ fontSize: 40 }}></SettingsIcon>
+                    </div>
+                    </div>
             )
         }
     }

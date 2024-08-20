@@ -2,8 +2,8 @@ import './App.css';
 import React from 'react';
 import Timer from '../Timer/Timer';
 import Settings from "../Settings/Settings";
-import winterBackground from "./winter.png";
-import starsBackground from "./stars.jpg";
+import yeojinBackground from "../../assets/yeojin-background2.jpeg";
+import sunsetBackground from "../../assets/sunset.jpg";
 
 class App extends React.Component {
   constructor(props) {
@@ -74,9 +74,9 @@ class App extends React.Component {
 
   getBackground() {
     if (this.state.background) {
-      return { "backgroundImage": `url(${winterBackground}`, "backgroundSize": "cover"};
+      return { "backgroundImage": `url(${yeojinBackground}`, "backgroundSize": "cover"};
     } else {
-      return { "backgroundImage": `url(${starsBackground}`, "backgroundSize": "cover"};
+      return { "backgroundImage": `url(${sunsetBackground}`, "backgroundSize": "cover"};
     }
   }
 

@@ -6,7 +6,12 @@ class Timer extends React.Component {
         let seconds = this.props.time / 1000;
         let minutes = Math.floor(seconds / 60);
         seconds = seconds % 60;
-        return `${minutes} : ${seconds}`;
+
+        if (Math.floor(seconds / 10) === 0) {
+            seconds = '0' + seconds;
+        }
+
+        return `${minutes} : ${seconds === 0 ? "00" : seconds}`;
     }
 
     getTimerClass() {
