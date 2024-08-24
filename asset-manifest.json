@@ -1,16 +1,14 @@
 {
   "files": {
-    "main.css": "/do-nothing/static/css/main.ef3519a3.css",
-    "main.js": "/do-nothing/static/js/main.231c372d.js",
-    "static/media/winter.png": "/do-nothing/static/media/winter.fcf1f591903a8b2b310f.png",
-    "static/media/yeojin-background2.jpeg": "/do-nothing/static/media/yeojin-background2.934f10f2129c7900b01d.jpeg",
+    "main.css": "/do-nothing/static/css/main.f75db8b2.css",
+    "main.js": "/do-nothing/static/js/main.136c81df.js",
     "static/media/sunset.jpg": "/do-nothing/static/media/sunset.98037e558d85f479aa1b.jpg",
     "index.html": "/do-nothing/index.html",
-    "main.ef3519a3.css.map": "/do-nothing/static/css/main.ef3519a3.css.map",
-    "main.231c372d.js.map": "/do-nothing/static/js/main.231c372d.js.map"
+    "main.f75db8b2.css.map": "/do-nothing/static/css/main.f75db8b2.css.map",
+    "main.136c81df.js.map": "/do-nothing/static/js/main.136c81df.js.map"
   },
   "entrypoints": [
-    "static/css/main.ef3519a3.css",
-    "static/js/main.231c372d.js"
+    "static/css/main.f75db8b2.css",
+    "static/js/main.136c81df.js"
   ]
 }
