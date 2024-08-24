@@ -2,7 +2,6 @@ import './App.css';
 import React from 'react';
 import Timer from '../Timer/Timer';
 import Settings from "../Settings/Settings";
-import yeojinBackground from "../../assets/yeojin-background2.jpeg";
 import sunsetBackground from "../../assets/sunset.jpg";
 
 class App extends React.Component {
@@ -73,11 +72,7 @@ class App extends React.Component {
   }
 
   getBackground() {
-    if (this.state.background) {
-      return { "backgroundImage": `url(${yeojinBackground}`, "backgroundSize": "cover"};
-    } else {
       return { "backgroundImage": `url(${sunsetBackground}`, "backgroundSize": "cover"};
-    }
   }
 
   componentDidMount() {
